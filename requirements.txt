@@ -1,0 +1,21 @@
+# Infraestructura Core
+streamlit>=1.32.0
+pandas>=2.1.0
+numpy>=1.26.0
+
+# Inteligencia Artificial y Deep Learning
+tensorflow>=2.15.0
+torch>=2.2.0
+scikit-learn>=1.4.0
+
+# Procesamiento de Lenguaje Natural (NLP) y Árboles
+transformers>=4.38.0
+xgboost>=2.0.0
+
+# Estadística Avanzada y Econometría (GARCH/VAR)
+statsmodels>=0.14.1
+arch>=6.3.0
+scipy>=1.12.0
+
+# Visualización de Alta Densidad
+plotly>=5.19.0
