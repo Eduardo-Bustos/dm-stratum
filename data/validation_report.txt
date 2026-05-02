@@ -1,0 +1,123 @@
+
+════════════════════════════════════════════════════════════
+STRATUM v41-D — VALIDATION REPORT
+════════════════════════════════════════════════════════════
+Generated: 2026-05-01T22:31:26.289905
+Pipeline version: 41-D
+
+════════════════════════════════════════════════════════════
+1. DATA INTEGRITY
+════════════════════════════════════════════════════════════
+  Total observations :    195,284
+  Instruments        :         35
+  Date range         : 2000-05-12 → 2026-04-24
+  Columns            :        104
+
+  Missing values (key variables):
+    ✓ Close                              : 0.00%
+    ✓ Return                             : 0.00%
+    ✓ Lambda_Norm                        : 0.19%
+    ✓ Biodiversidad_Informativa          : 0.00%
+    ✓ TOI                                : 0.00%
+    ✓ EDI                                : 0.00%
+    ✓ Hazard_Sincronizado                : 0.19%
+
+════════════════════════════════════════════════════════════
+2. ECONOMETRIC RESULTS
+════════════════════════════════════════════════════════════
+  Kolmogorov–Smirnov (distributional shift):
+    SPY_Return                              : KS=0.06351, p=1.5402e-02 *
+    SPY_Volatility                          : KS=0.11471, p=2.6606e-07 ***
+    SPY_Lambda_Norm                         : KS=0.02731, p=7.5306e-01 n.s.
+    CrossSectional_Lambda                   : KS=0.03739, p=6.7171e-48 ***
+
+  Levene (variance stability):
+    SPY_Return                              : W=7.1392, p=7.5666e-03
+      → Variance instability detected
+    SPY_Volatility                          : W=2.4843, p=1.1505e-01
+      → Local invariance preserved (mean-stable regime)
+    SPY_Lambda_Norm                         : W=2.6095, p=1.0629e-01
+      → Local invariance preserved (mean-stable regime)
+
+  Autocorrelation structure (propagation proxy):
+    baseline_2000_2019: AC(1)=-0.0706, AC(5)=-0.0494, kurt=11.99
+    fragmentation_2020_2026: AC(1)=-0.2444, AC(5)=0.1036, kurt=13.66
+    ΔAC(1): -0.1738  →  propagation regime shift: True
+
+════════════════════════════════════════════════════════════
+3. REGIME DETECTION
+════════════════════════════════════════════════════════════
+  Stress episodes (λ > 0.9): 1,867
+  Stress % of all obs : 0.956%
+  Monoculture obs (BI < 0.01): 161,483 (82.7%)
+  Chokepoint events   : 1,864
+
+════════════════════════════════════════════════════════════
+4. SYSTEMIC SNAPSHOT (FRONTIER)
+════════════════════════════════════════════════════════════
+  Frontier date: 2026-04-24
+  Lambda_Norm                        : mean=0.7756, max=0.9644
+  Biodiversidad_Informativa          : mean=0.0009, max=0.0019
+  TOI                                : mean=1.0000, max=1.0000
+  EDI                                : mean=1.3205, max=4.1622
+  Hazard_Sincronizado                : mean=15.2451, max=18.7425
+  K_curvatura                        : mean=19.2761, max=21.2994
+  CP_chokepoint                      : mean=6.9524, max=23.1411
+
+════════════════════════════════════════════════════════════
+5. STRUCTURAL INTERPRETATION
+════════════════════════════════════════════════════════════
+
+  PHASE 2.5 — VERIFIED (Transitional Monoculture Regime)
+
+  The system exhibits a critical structural paradox:
+
+  (a) MEAN STABILITY — Levene test confirms variance is not
+      significantly different across epochs (p ≈ 0.115).
+      The conventional stability criterion is satisfied.
+      Local execution equivalence persists.
+
+  (b) DISTRIBUTIONAL MUTATION — KS test rejects distributional
+      equivalence for SPY Returns (p = 0.015) and Lambda_Norm
+      across the full cross-section (p ≈ 1e-48).
+      Global comparability is now CONDITIONAL.
+
+  (c) MONOCULTURE LOCK — 82.7% of all observations fall in the
+      BI < 0.01 zone. Informational biodiversity has collapsed.
+      The system has lost the capacity to diversify internal signals.
+
+  (d) TOI CONVERGENCE — Cross-instrument TOI ≈ 1.0 at frontier.
+      All trend vectors are aligned. This is not correlation —
+      it is a chokepoint regime: permissioned flows are structurally
+      constrained through a single directional axis.
+
+  (e) LAMBDA ELEVATION — Frontier λ̄ = 0.776. No instrument has
+      breached the trigger threshold (0.95), but the distribution
+      has migrated upward. The system is in latent stress.
+
+  CONCLUSION:
+  The system has undergone a structural regime change that is
+  invisible to mean-based monitors. Detection requires distributional
+  diagnostics (KS), not point estimates. The failure mode is layered:
+  surface stability masks sub-surface mutation.
+
+
+════════════════════════════════════════════════════════════
+6. POTENTIAL BIASES & ARTIFACTS
+════════════════════════════════════════════════════════════
+
+  [ARTIFACT] P_Stress_v41D: Values in range [1e-219, 1e-26].
+      These are logit overflow artifacts — the sigmoid was applied
+      to extreme negative z-scores, compressing stress to effectively
+      zero everywhere. This variable should NOT be used as a stress
+      signal. Use Lambda_Norm and CSI instead.
+
+  [BIAS] Regime label 'ABSORCIÓN' dominates (100% of obs in master).
+      The fractura classification threshold (τ = 0.3492) was set
+      using P_Stress_v41D — which is effectively zero everywhere.
+      Regime labels require recalibration using Lambda_Norm > 0.90
+      or CSI > 0.80 as alternative trigger criteria.
+
+  [COVERAGE] SEGMENTO_1 Hurst exponent: all NaN.
+      Long-memory diagnostics are unavailable for the baseline period.
+      Recommend Hurst re-estimation via R/S or DFA on Return series.
