@@ -1,0 +1,264 @@
+{
+  "ks_tests": {
+    "SPY_Return": {
+      "ks_stat": 0.063514,
+      "p_value": 0.015401684828561277,
+      "n_pre": 4233,
+      "n_post": 695,
+      "shift_confirmed": true,
+      "interpretation": "Distributional mutation confirmed (Phase 2.5)"
+    },
+    "SPY_Volatility": {
+      "ks_stat": 0.114711,
+      "p_value": 2.6606477688096244e-07,
+      "n_pre": 4233,
+      "n_post": 695,
+      "shift_confirmed": true,
+      "interpretation": "Distributional mutation confirmed (Phase 2.5)"
+    },
+    "SPY_Lambda_Norm": {
+      "ks_stat": 0.027312,
+      "p_value": 0.7530584582336874,
+      "n_pre": 4202,
+      "n_post": 695,
+      "shift_confirmed": false,
+      "interpretation": "Distribution stable"
+    },
+    "CrossSectional_Lambda": {
+      "ks_stat": 0.037387,
+      "p_value": 6.717059520622639e-48,
+      "shift_confirmed": true
+    }
+  },
+  "levene_tests": {
+    "SPY_Return": {
+      "levene_stat": 7.139189,
+      "p_value": 0.007566550126567606,
+      "variance_stable": false,
+      "interpretation": "Variance instability detected"
+    },
+    "SPY_Volatility": {
+      "levene_stat": 2.484283,
+      "p_value": 0.1150529424087082,
+      "variance_stable": true,
+      "interpretation": "Local invariance preserved (mean-stable regime)"
+    },
+    "SPY_Lambda_Norm": {
+      "levene_stat": 2.609542,
+      "p_value": 0.10628686102481213,
+      "variance_stable": true,
+      "interpretation": "Local invariance preserved (mean-stable regime)"
+    }
+  },
+  "propagation": {
+    "baseline_2000_2019": {
+      "n": 4233,
+      "autocorr_lag1": -0.07061,
+      "autocorr_lag5": -0.049413,
+      "mean": 0.00035844,
+      "std": 0.01223534,
+      "kurtosis": 11.9873
+    },
+    "fragmentation_2020_2026": {
+      "n": 695,
+      "autocorr_lag1": -0.244377,
+      "autocorr_lag5": 0.103643,
+      "mean": 0.00081748,
+      "std": 0.01456041,
+      "kurtosis": 13.6609
+    },
+    "ac1_delta": -0.173767,
+    "propagation_regime_shift": true
+  },
+  "regime_detection": {
+    "stress_episodes_total": 1867,
+    "stress_pct_of_all": 0.956,
+    "by_year": {
+      "2006": 23,
+      "2007": 47,
+      "2008": 328,
+      "2010": 14,
+      "2011": 195,
+      "2012": 8,
+      "2013": 65,
+      "2014": 51,
+      "2015": 34,
+      "2016": 39,
+      "2017": 4,
+      "2018": 212,
+      "2019": 73,
+      "2020": 309,
+      "2021": 29,
+      "2022": 137,
+      "2024": 128,
+      "2025": 136,
+      "2026": 35
+    },
+    "monoculture_obs": 161483,
+    "monoculture_pct": 82.69,
+    "chokepoint_events": 1864,
+    "chokepoint_pct": 0.955
+  },
+  "systemic_snapshot": {
+    "frontier_date": "2026-04-24",
+    "n_instruments": 34,
+    "signals": {
+      "Lambda_Norm": {
+        "mean": 0.775578,
+        "max": 0.964404,
+        "min": 0.548261
+      },
+      "Biodiversidad_Informativa": {
+        "mean": 0.000855,
+        "max": 0.001942,
+        "min": 0.000546
+      },
+      "TOI": {
+        "mean": 0.999991,
+        "max": 0.999993,
+        "min": 0.999982
+      },
+      "EDI": {
+        "mean": 1.320527,
+        "max": 4.162174,
+        "min": 0.024396
+      },
+      "Hazard_Sincronizado": {
+        "mean": 15.24511,
+        "max": 18.742507,
+        "min": 10.846715
+      },
+      "K_curvatura": {
+        "mean": 19.276135,
+        "max": 21.299395,
+        "min": 11.666359
+      },
+      "CP_chokepoint": {
+        "mean": 6.952354,
+        "max": 23.141127,
+        "min": 3.75473
+      }
+    }
+  },
+  "stress_episodes": {
+    "top_stress_instruments": [
+      {
+        "instrument_id": "XOP",
+        "Lambda_Norm": 0.96440437644423,
+        "TOI": 0.9999909856611562,
+        "Biodiversidad_Informativa": 0.0019422337379441,
+        "Hazard_Sincronizado": 18.56686374540197
+      },
+      {
+        "instrument_id": "XLY",
+        "Lambda_Norm": 0.9614937401401784,
+        "TOI": 0.9999912902120583,
+        "Biodiversidad_Informativa": 0.0014174507908767,
+        "Hazard_Sincronizado": 18.69975514831982
+      },
+      {
+        "instrument_id": "XLV",
+        "Lambda_Norm": 0.957816927254362,
+        "TOI": 0.9999915285054132,
+        "Biodiversidad_Informativa": 0.0011039909588852,
+        "Hazard_Sincronizado": 18.74250737139014
+      },
+      {
+        "instrument_id": "XLU",
+        "Lambda_Norm": 0.9533015371799026,
+        "TOI": 0.9999917263869218,
+        "Biodiversidad_Informativa": 0.0009132822112035,
+        "Hazard_Sincronizado": 18.72402437590493
+      },
+      {
+        "instrument_id": "XLP",
+        "Lambda_Norm": 0.9478196368542032,
+        "TOI": 0.9999918987447364,
+        "Biodiversidad_Informativa": 0.0007990401372913,
+        "Hazard_Sincronizado": 18.65821941305565
+      },
+      {
+        "instrument_id": "XLK",
+        "Lambda_Norm": 0.941196025912122,
+        "TOI": 0.9999920541829528,
+        "Biodiversidad_Informativa": 0.0007367748032426,
+        "Hazard_Sincronizado": 18.550568686363743
+      },
+      {
+        "instrument_id": "XLI",
+        "Lambda_Norm": 0.9333658779505432,
+        "TOI": 0.9999921978193588,
+        "Biodiversidad_Informativa": 0.0007141205429364,
+        "Hazard_Sincronizado": 18.40445753486589
+      },
+      {
+        "instrument_id": "XLF",
+        "Lambda_Norm": 0.9243172512833844,
+        "TOI": 0.9999923322639824,
+        "Biodiversidad_Informativa": 0.0007170007515164,
+        "Hazard_Sincronizado": 18.22499827645558
+      },
+      {
+        "instrument_id": "XLE",
+        "Lambda_Norm": 0.9140683277657512,
+        "TOI": 0.9999924583513892,
+        "Biodiversidad_Informativa": 0.0007341336754632,
+        "Hazard_Sincronizado": 18.01683130361257
+      },
+      {
+        "instrument_id": "XLB",
+        "Lambda_Norm": 0.9026587918061952,
+        "TOI": 0.9999925756231044,
+        "Biodiversidad_Informativa": 0.0007577491944603,
+        "Hazard_Sincronizado": 17.78366468434164
+      }
+    ],
+    "frontier_lambda_mean": 0.7756
+  },
+  "audit_metadata": {
+    "timestamp": "2026-05-01T22:31:26.282698",
+    "total_obs": 195284,
+    "instruments": [
+      "DBC",
+      "DIA",
+      "EEM",
+      "EFA",
+      "FXE",
+      "FXY",
+      "GLD",
+      "HYG",
+      "IEF",
+      "IWM",
+      "IYT",
+      "LQD",
+      "OIH",
+      "QQQ",
+      "SEA",
+      "SHY",
+      "SLV",
+      "SMH",
+      "SOXX",
+      "SPY",
+      "TLT",
+      "UNG",
+      "USO",
+      "UUP",
+      "VXX",
+      "XLB",
+      "XLE",
+      "XLF",
+      "XLI",
+      "XLK",
+      "XLP",
+      "XLU",
+      "XLV",
+      "XLY",
+      "XOP"
+    ],
+    "date_range": [
+      "2000-05-12",
+      "2026-04-24"
+    ],
+    "pipeline_version": "41-D"
+  }
+}
